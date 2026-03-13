@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Catch The Button 😂</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(120deg,#ff9a9e,#fad0c4);
+    font-family:Arial, Helvetica, sans-serif;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    margin-bottom:40px;
+}
+
+button{
+    position:absolute;
+    padding:15px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:#ff4d4d;
+    color:white;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.success{
+    font-size:22px;
+    color:#333;
+    margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Try To Click The Button 😏</h1>
+<p>If you click it... you win!</p>
+</div>
+
+<button id="runBtn">Click Me</button>
+
+<div id="message" class="success"></div>
+
+<script>
+
+const btn = document.getElementById("runBtn");
+
+btn.addEventListener("mouseover", moveButton);
+
+function moveButton(){
+
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 50);
+
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+
+btn.addEventListener("click", function(){
+    document.getElementById("message").innerHTML =
+    "😱 HOW DID YOU CLICK IT?! You are officially a certified bug hunter 🐛";
+});
+
+btn.style.left = "50%";
+btn.style.top = "60%";
+
+</script>
+
+</body>
+</html>
